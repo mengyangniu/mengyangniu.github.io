@@ -8,7 +8,7 @@ tags:
 - Script
 ---
 
-To batch update items using homebrew of pip
+<center>*To batch update items using homebrew of pip*</center>
 
 ## Homebrew
 ```bash
