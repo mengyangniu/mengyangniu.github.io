@@ -232,7 +232,7 @@ social_icons:
 
 # Sidebar Avatar
 # in directory: /assets/images/avatar.gif
-#avatar:
+avatar: https://github.com/mengyangniu/images/blob/master/avator.jpg?raw=true
 
 
 # Table Of Contents in the Sidebar
