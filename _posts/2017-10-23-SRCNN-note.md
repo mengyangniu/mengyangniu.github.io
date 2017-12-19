@@ -8,7 +8,7 @@ tags:
 - PaperNote
 ---
 
-Image Super-Resolution Using Deep Convolutional Networks
+*Image Super-Resolution Using Deep Convolutional Networks*
 
 在课题的选择上，我的初步打算是图像超分辨率（Super Resolution, SR）或者图像分割。但是由于图像分割Mask-RCNN一直未开源，GitHub上只有tensorflow复现且问题颇多，大家的pytorch复现也都遇到了问题；而超分辨率NITRE2017冠军EDSR开源了他们的代码，于是打算先把图像超分辨率领域的一些重点论文拿来看一看。
 
