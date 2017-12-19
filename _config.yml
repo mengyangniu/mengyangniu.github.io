@@ -233,7 +233,7 @@ social_icons:
 # Sidebar Avatar
 in directory: /assets/images/avatar.png
 #avatar: https://github.com/mengyangniu/mengyangniu.github.io/blob/master/assets/images/avatar.png
-avatar: true
+avatar: blob/master/assets/images/avatar.jpg
 
 # Table Of Contents in the Sidebar
 toc:
