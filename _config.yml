@@ -231,8 +231,8 @@ social_icons:
 
 
 # Sidebar Avatar
-in directory: /assets/images/avatar.gif
-# avatar: https://github.com/mengyangniu/images/blob/master/avator.jpg?raw=true
+in directory: /assets/images/avatar.jpg
+# avatar: https://github.com/mengyangniu/images/blob/master/avatar.jpg?raw=true
 
 
 # Table Of Contents in the Sidebar
