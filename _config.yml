@@ -234,6 +234,7 @@ social_icons:
 in directory: /assets/images/avatar.jpg
 #avatar: https://github.com/mengyangniu/mengyangniu.github.io/blob/master/assets/images/avatar.png
 #avatar: blob/master/assets/images/avatar.jpg
+avatar:
 
 # Table Of Contents in the Sidebar
 toc:
