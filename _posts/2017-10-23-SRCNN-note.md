@@ -50,7 +50,7 @@ SRCNN的思路非常清晰，算法也很简单，开山之作大抵如此。
 
 虽然这三步操作都有不同的目的，但是都指向了相同的操作——卷积。将其合在一起就形成了CNN。
 
-![SRCNN](https://github.com/mengyangn/Images_for_MarkDown/SRCNN-Figure2.png?raw=true)
+![SRCNN](https://raw.githubusercontent.com/mengyangniu/Images_for_MarkDown/master/SRCNN-Figure2.png)
 
 
 
