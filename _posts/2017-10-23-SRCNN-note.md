@@ -96,7 +96,7 @@ VDSR[[2]](https://arxiv.org/abs/1511.04587)/DRCN[[3]](https://www.baidu.com/link
 
 
 
-####参考文献
+### 参考文献
 
 [1] Dong C, Chen C L, He K, et al. Image Super-Resolution Using Deep Convolutional Networks[J]. IEEE Transactions on Pattern Analysis & Machine Intelligence, 2016, 38(2):295.
 
