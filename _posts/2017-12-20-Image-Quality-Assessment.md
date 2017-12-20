@@ -127,7 +127,11 @@ $$
 令$\alpha=\beta=\gamma=1$，对于8-bit灰度图像可以得到：
 
 $$
-SSIM(x,y)=\frac{(2\mu_x\mu_y+C_1)(2\sigma_x\sigma_y+C_2)(\sigma_{xy}+C_3)}{(\mu_x^2+\mu_y^2+C_1)(\sigma_x^2+\sigma_y^2+C_2)(\sigma_x\sigma_y+C_3)}, (C_1=6.5025, C_2=58.5225, C_3=29.26125)
+SSIM(x,y)=\frac{(2\mu_x\mu_y+C_1)(2\sigma_x\sigma_y+C_2)(\sigma_{xy}+C_3)}{(\mu_x^2+\mu_y^2+C_1)(\sigma_x^2+\sigma_y^2+C_2)(\sigma_x\sigma_y+C_3)}
+$$
+
+$$
+(C_1=6.5025, C_2=58.5225, C_3=29.26125)
 $$
 
 SSIM的取值范围为[0,1]值越大则失真越小。
