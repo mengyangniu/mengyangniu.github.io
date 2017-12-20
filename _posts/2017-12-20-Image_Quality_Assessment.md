@@ -14,8 +14,6 @@ mathjax: true
 
 <!-- more -->
 
-# Image Quality Assessment
-
 ## PSNR
 
 PSNR（Peak Signal to Noise Ratio），峰值信噪比。MSE（Mean Square Error），均方误差。
