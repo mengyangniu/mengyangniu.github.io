@@ -3,4 +3,7 @@ title: about
 layout: page
 ---
 
-Building...
+A second year graduate student in UESTC. 
+A beginner in deep learning.
+
+
