@@ -10,6 +10,8 @@ tags:
 
 <center><i>To batch update items using homebrew of pip</i></center>
 
+<!-- more -->
+
 ## Homebrew
 ```bash
 for formula in $(brew outdated | cat);
