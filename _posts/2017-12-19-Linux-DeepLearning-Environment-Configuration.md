@@ -5,7 +5,7 @@ categories:
 - Linux
 tags:
 - Linux
-- Deep Learning
+- DeepLearning
 - Configuration
 - Pytorch
 - Mxnet

@@ -4,8 +4,11 @@ subtitle: SRCNN - Image Super-Resolution Using Deep Convolutional Networks
 date: 2017-10-23 19:49:00
 categories:
 - PaperNote
+- SuperResolution
 tags:
 - PaperNote
+- SuperResolution
+- DeepLearning
 ---
 
 <center><i>Image Super-Resolution Using Deep Convolutional Networks</i></center>
