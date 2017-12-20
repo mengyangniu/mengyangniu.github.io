@@ -44,7 +44,7 @@ SSIM（structural similarity index）是一种基于结构相似性的图像质�
 
 ### SSIM指数
 
-![]()
+![SSIM测量系统](https://raw.githubusercontent.com/mengyangniu/images/master/SSIM-system.jpg)
 
 SSIM指数的测量可由三种对比模块组成，分别是：亮度，对比度，结构。带比对测量的图分别为x, y。
 
