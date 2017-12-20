@@ -1,5 +1,5 @@
 ---
-title:Image Qualoty Assessment
+title: Image Quality Assessment
 data: 2017-12-20 21:00:00
 categories:
 - SuperResolution
