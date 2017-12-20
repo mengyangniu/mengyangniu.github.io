@@ -10,7 +10,7 @@ tags:
 mathjax: true
 ---
 
-<center><i>受到程博启发，把一些常见的图像评估标准都了解下。</i></center>
+<center><i>了解一下常见的图像评估标准。</i></center>
 
 <!-- more -->
 
