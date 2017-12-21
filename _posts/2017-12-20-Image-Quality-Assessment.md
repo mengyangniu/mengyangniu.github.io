@@ -165,7 +165,7 @@ $$
 
 SROCC(Spearman’s correlation coefficient for ranked data, 斯皮尔曼等级相关)主要用于解决称名数据和顺序数据相关的问题。
 
-| num | X  | Y  |Rank(X) | Rank(Y) | d   | $d^2$ |
+| num | X  | Y  |Rank(X) | Rank(Y) | d   |  d^2  |
 | --- | ---| ---| ---    |---      | --- | ---   |
 |1    | 56 | 45 |2       |3        |-1   |1      |
 |2    | 45 | 35 |3       |4        |-1   |1      |
