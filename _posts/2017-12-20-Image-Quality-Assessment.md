@@ -1,6 +1,6 @@
 ---
 title: Image Quality Assessment
-data: 2017-12-20 21:00:00
+data: 2017-12-22 21:00:00
 categories:
 - SuperResolution
 - DeepLearning
@@ -194,7 +194,14 @@ $$
 
 ## rMSE
 
+rMSE，root-mean-square error，均方根误差。
 
+$$
+rMSE=\sqrt{MSE}=\sqrt{\frac{1}{H\times{W}}\sum_{i=1}^H{\sum_{j=1}^{W}({X(i,j)-Y(i,j)})^2}}
+$$
+
+所以rMSE、MSE、PSNR本质上并没有什么区别。
 
 ## Perceptual Loss
+
 
