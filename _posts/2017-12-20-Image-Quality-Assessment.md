@@ -179,7 +179,7 @@ srocc=1-\frac{6\sum_{i=1}^n{d^2}}{n(n^2-1)}\quad(1)
 $$
 
 $$
-{\sum_{i=1}^n(Rank(X)_i-\bar{Rank(X))^2}}{\sum_{i=1}^n(Rank(Y)_i-\bar{Rank(Y))^2}}
+\sqrt{\sum_{i=1}^n(Rank(X)_i-\bar{Rank(X))^2}{\sum_{i=1}^n(Rank(Y)_i-\bar{Rank(Y))^2}}}
 $$
 
 对于以上两个公式，当某个特定的数据集合(如图像X的像素或图像Y的像素)中有相等的值时使用公式(2)，否则使用公式(1)。
