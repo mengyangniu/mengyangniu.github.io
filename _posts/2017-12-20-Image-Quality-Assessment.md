@@ -179,6 +179,10 @@ srocc=1-\frac{6\sum_{i=1}^n{d^2}}{n(n^2-1)}\quad(1)
 $$
 
 $$
+srocc=\frac{\sum_{i=1}^n(Rank(X)_i-\bar{Rank(X)})(Rank(Y)_i-\bar{Rank(Y)})}{\sqrt{\sum_{i=1}^n(Rank(X)_i-\bar{Rank(X))^2}{\sum_{i=1}^n(Rank(Y)_i-\bar{Rank(Y))^2}}}}\quad(2)
+$$
+
+$$
 \sqrt{\sum_{i=1}^n(Rank(X)_i-\bar{Rank(X))^2}{\sum_{i=1}^n(Rank(Y)_i-\bar{Rank(Y))^2}}}
 $$
 
