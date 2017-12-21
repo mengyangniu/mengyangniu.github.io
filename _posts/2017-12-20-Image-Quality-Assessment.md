@@ -182,10 +182,6 @@ $$
 srocc=\frac{\sum_{i=1}^n(Rank(X)_i-\bar{Rank(X)})(Rank(Y)_i-\bar{Rank(Y)})}{\sqrt{\sum_{i=1}^n(Rank(X)_i-\bar{Rank(X))^2}{\sum_{i=1}^n(Rank(Y)_i-\bar{Rank(Y))^2}}}}\quad(2)
 $$
 
-$$
-\sqrt{\sum_{i=1}^n(Rank(X)_i-\bar{Rank(X))^2}{\sum_{i=1}^n(Rank(Y)_i-\bar{Rank(Y))^2}}}
-$$
-
 对于以上两个公式，当某个特定的数据集合(如图像X的像素或图像Y的像素)中有相等的值时使用公式(2)，否则使用公式(1)。
 
 ## KROCC
