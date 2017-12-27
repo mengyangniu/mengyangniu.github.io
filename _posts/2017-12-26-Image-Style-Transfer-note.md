@@ -2,7 +2,6 @@
 title: PaperNote - Image Style Transfer
 data: 2017-12-26 09:38:00
 categories:
-- Image Style Transfer
 - PaperNote
 tags:
 - DeepLearning
@@ -13,8 +12,6 @@ mathjax: true
 <center><i>"Image Style Transfer Using Convolutional Neural Networks"</i></center>
 
 <!-- more -->
-
-## 深度图像表达
 
 文章使用目标检测预训练网络VGG19中的16个卷积层和5个pooling层作为特征空间，文章对每一张图片不同位置的卷积滤波器的平均激活值都做归一化，由于只包含线性操作，没有使用BN或者pooling，因此归一化并不会改变VGG的输出 。同时网络不使用全连接层，并用Average Pooling代替Max Pooling（只是实验中发现这样能够提供更好的视觉感受）。
 
@@ -81,7 +78,7 @@ $$
 
 文章选取了层‘conv1\_1’, ‘conv2\_1’, ‘conv3\_1’, ‘conv4\_1’和 ‘conv5\_1’计算$\mathcal{L}_{style}$，能产生主观感受更好的图片。
 
-####用于重建内容的特征选取
+#### 用于重建内容的特征选取
 
 在保持$\alpha/\beta=0.001$的前提下，分别取‘conv2\_2’和‘conv4\_2’用于计算$\mathcal{L}_{content}$，结果如下：
 
@@ -110,7 +107,7 @@ $$
 
 ### 我的疑问
 
-##### 关于$\mathcal{L_{content}}$
+#### 关于$\mathcal{L_{content}}$
 
 内容损失表示为：
 
@@ -128,7 +125,7 @@ $$
 
 猜想：是否因为各层特征图尺寸不一，统一改为$\frac{1}{2}$能比较方便地处理权重$\omega$以及参数如$\alpha/\beta$？
 
-#####关于$\mathcal{L_{style}}$
+####关于$\mathcal{L_{style}}$
 
 图像风格表达为：$G^l_{ij}=\sum_k{F^l_{ik}F^l_{jk}}$，可以看出，其实就是第$i$个特征图和第$j$个特征图的内积，表达到向量上那就是向量的线性相关性，为什么特征图之间的线性相关性可以表示风格？这里面是什么原理？是否有其他办法可以有类似的效果？
 
