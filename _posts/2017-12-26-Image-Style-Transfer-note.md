@@ -96,7 +96,7 @@ $$
 
 ### 照片风格转换
 
-该方法也可以用于照片风格转换，$\alpha/\beta$设为了0.02，比较好理解，因为需要保留更多的照片细节。
+该方法也可以用于照片风格转换，$\alpha/\beta$设为了0.01，比较好理解，因为需要保留更多的照片细节。
 
 ![Figure 7](https://github.com/mengyangniu/images/blob/master/ImageStyleTransfer-Figure7.PNG?raw=true)
 
