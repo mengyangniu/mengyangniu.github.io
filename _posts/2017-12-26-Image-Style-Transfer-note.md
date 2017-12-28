@@ -66,7 +66,7 @@ $$
 $$
 \mathcal{L}_{total}(\vec{p},\vec{a},\vec{x})=\alpha\mathcal{L}_{content}(\vec{p},\vec{x})+\beta\mathcal{L}_{style}(\vec{a},\vec{x})
 $$
-文章使用L-BFGS对$\mathcal{L}_{total}$进行优化，对$\vec{x}$求导，记得到了具有$\alpha$的内容、具有$\beta$风格的图片$\vec{x}$。
+文章使用L-BFGS对$\mathcal{L}_{total}$进行优化，对$\vec{x}$求导，即得到了具有$\alpha$的内容、具有$\beta$风格的图片$\vec{x}$。
 
 最终得到的效果是这样的：
 
