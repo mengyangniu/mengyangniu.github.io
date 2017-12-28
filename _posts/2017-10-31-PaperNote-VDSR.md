@@ -1,5 +1,5 @@
 ---
-title:  PaperNote-VDSR
+title:  PaperNote - VDSR
 date: 2017-10-31 09:18:00
 categories:
 - PaperNote

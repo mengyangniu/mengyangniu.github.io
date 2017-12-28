@@ -1,6 +1,5 @@
 ---
-title:  PaperNote-SRCNN
-subtitle: SRCNN - Image Super-Resolution Using Deep Convolutional Networks
+title:  PaperNote - SRCNN
 date: 2017-10-23 19:49:00
 categories:
 - PaperNote
