@@ -11,7 +11,7 @@ tags:
 - Mxnet
 ---
 
-<center><i>Ubuntu1604, Cuda8/9, Cudnn7, Opencv2/3, Pytorch 0.2.0 / 0.4.0, Mxnet 0.12.*/1.0.0, Caffe</i></center>
+<center>Ubuntu1604, Cuda8/9, Cudnn7, Opencv2/3, Pytorch 0.2.0 / 0.4.0, Mxnet 0.12.*/1.0.0, Caffe</center>
 
 <!-- more -->
 

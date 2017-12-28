@@ -2,15 +2,14 @@
 title: Image Quality Assessment
 data: 2017-12-22 21:00:00
 categories:
-- SuperResolution
-- DeepLearning
+- PaperNote
 tags:
 - SuperResolution
 - DeepLearning
 mathjax: true
 ---
 
-<center><i>了解一下常见的图像评估标准。</i></center>
+<center>了解一下常见的图像评估标准。</center>
 
 <!-- more -->
 

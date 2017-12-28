@@ -3,14 +3,13 @@ title:  PaperNote - SRCNN
 date: 2017-10-23 19:49:00
 categories:
 - PaperNote
-- SuperResolution
 tags:
 - PaperNote
 - SuperResolution
 - DeepLearning
 ---
 
-<center><i>Image Super-Resolution Using Deep Convolutional Networks</i></center>
+<center>Image Super-Resolution Using Deep Convolutional Networks</center>
 
 <!-- more -->
 

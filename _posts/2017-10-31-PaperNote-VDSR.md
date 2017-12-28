@@ -3,14 +3,13 @@ title:  PaperNote - VDSR
 date: 2017-10-31 09:18:00
 categories:
 - PaperNote
-- SuperResolution
 tags:
 - PaperNote
 - SuperResolution
 - DeepLearning
 ---
 
-<center><i>VDSR(Accurate Image Super-Resolution Using Very Deep Convolutional Networks), CVPR2016</i></center>
+<center>VDSR(Accurate Image Super-Resolution Using Very Deep Convolutional Networks), CVPR2016</center>
 
 <!-- more --> 
 

@@ -9,7 +9,7 @@ tags:
 mathjax: true
 ---
 
-<center><i>"Image Style Transfer Using Convolutional Neural Networks"</i></center>
+<center>"Image Style Transfer Using Convolutional Neural Networks"</center>
 
 <!-- more -->
 
