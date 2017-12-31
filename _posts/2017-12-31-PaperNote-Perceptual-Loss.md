@@ -20,6 +20,7 @@ mathjax: true
 ![](https://raw.githubusercontent.com/mengyangniu/images/master/Perceptual-Loss-Figure2.png)
 
 如图所示，该方法由两个部分组成：图像转换网络$f_W$和损失网络$\phi$，其中$\phi$定义一系列损失函数$\mathcal{l}_1,\mathcal{l}_2,…\mathcal{l}_k$。图像转换网络$f_W$是一个深度残差卷积神经网络，参数为$W$，通过映射$\hat{y}=f_W(x)$将输入$x$转化为输出$\hat{y}$；损失函数$\mathcal{l}(\hat{y},y_i)$计算输出图像$y$与目标图像$\hat{y}$之间的差别。使用SGD来最小化各损失函数加权后的总损失$W^*$来训练网络：
+
 $$
 W^*=arg\min_{W}E_{x,\{y_i\}}[\sum_{i=1}\lambda_i\mathcal{l}_i(f_W(x),y_i))]
 $$
