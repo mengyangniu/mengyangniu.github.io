@@ -1,3 +1,14 @@
+---
+title: PaperNote - Perceptual Loss
+data: 2017-12-31 23:42:00
+categories:
+- PaperNote
+tags:
+- DeepLearning
+- PaperNote
+mathjax: true
+---
+
 <center>Perceptual Losses for Real-Time Style Transfer and Super-Resolution</center>
 
 文章主要考虑的是图像转换问题，如超分辨率和图像风格转换。大部分现有的方法都是计算输入与输出之间的逐像素误差来作为损失函数训练前馈神经网络；还有一些文章表明，通过从预训练的网络中提取高级特征来定义和优化损失，可以生成高质量的图像（如[Image Style Transfer](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)，固定预训练网络参数不变，通过优化随机输入，来得到一张具有图片A的内容和图片B的风格的结果图）。文章结合两者，提出利用感知损失功能来训练前馈网络进行图像转换。
