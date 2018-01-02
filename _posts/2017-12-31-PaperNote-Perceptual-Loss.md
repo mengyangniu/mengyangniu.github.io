@@ -47,9 +47,11 @@ $$
 
 ### Perceptual Loss Function
 
-文章使用ImageNet预训练的VGG16作为Perceptual Loss Function。
+文章使用ImageNet预训练的VGG16来计算Perceptual Loss Function，分为特征重建损失（Feature Reconstruction Loss）和风格重建损失（Style Reconstruction Loss）。
 
 ##### 特征重建损失
+
+（我个人理解特征损失就是内容损失。）
 
 $\phi_j(x)$表示损失网络$\phi$在输入为$x$时第$j$层的激活值，若第$j$层是一个卷积层，则$\phi_j(x)$是维度为${C_j}\times{H_j}\times{W_j}$的特征图。特征重建损失表示为特征图之间的欧氏距离：
 
@@ -60,8 +62,6 @@ $$
 
 ![](https://github.com/mengyangniu/images/blob/master/Perceptual-Loss-Figure3.png?raw=true)
 
-
-
 ##### 风格重建损失
 
 使用风格损失表征颜色、质地、样式等细节信息的偏差。和上述相同，$\phi_j(x)$表示损失网络$\phi$在输入为$x$时第$j$层的激活值，若第$j$层是一个卷积层，则$\phi_j(x)$是维度为${C_j}\times{H_j}\times{W_j}$的特征图。定义${C_j}\times{C_j}$的格拉姆矩阵（Gram Matrix）$G_j^{\phi}(x)$，其元素：
@@ -71,15 +71,21 @@ G_j^{\phi}(x)_{c,c^{'}}=\frac{1}{C_jH_jW_j}\sum_{h=1}^{H_j}\sum_{w=1}^{W_j}\phi_
 $$
 
 如果认为$\phi_j(x)$表示在$H_j\times{W_j}$网格中的每一点都有一个$C_j$维特征，则$G_j^{\phi}(x)$可以认为是，在网格中点与点相互独立的前提下，这些特征之间的协方差矩阵。也有更加简便的计算方式：将${C_j}\times{H_j}\times{W_j}$的$\phi_j(x)$展成${C_j}\times{H_jW_j}$的$\psi$，则：
+
 $$
 G_j^{\phi}(x)=\frac{\psi\psi^T}{C_jH_jW_j}
 $$
+
 则风格损失可以表示为：
+
 $$
 \mathcal{l}_{style}^{\phi,j}(\hat{y},y)=||G_j^{\phi}(\hat{y}-G_j^{\phi}(y)||_F^2
 $$
+
 （即使$\hat{y}$与$y$尺寸不同，他们的Gram Matrix也有相同的尺寸，因此风格损失函数可以计算不同尺寸的图像之间的损失）
 
 文章考虑到不同层所表征的结构特征，最终使用不同层的风格损失$\mathcal{l}_{style}^{\phi,j}(\hat{y},y)$相加得到总的风格损失$\mathcal{l}_{style}^{\phi,\mathcal{J}}(\hat{y},y)$。
 
-##### 损失函数
+#### 实验
+
+To Be Continued.
