@@ -15,7 +15,7 @@ mathjax: true
 
 文章以图像风格转换问题为例，相对于基于优化的方法（即Gatys的[Image Style Transfer](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)），有相似的结果，却快了3个数量级；在单图像超分辨率问题上也能有很好的效果。
 
-### 方法
+### 结构
 
 ![](https://raw.githubusercontent.com/mengyangniu/images/master/Perceptual-Loss-Figure2.png)
 
@@ -28,3 +28,24 @@ $$
 > <i>($\lambda_i$是什么？)</i>
 
 作者认为基于优化的图像生成方法[[1]](https://arxiv.org/abs/1412.0035)[[2]](https://arxiv.org/abs/1312.6034)[[3]](https://arxiv.org/abs/1506.06579)[[4]](https://arxiv.org/abs/1505.07376)[[5]](https://arxiv.org/abs/1508.06576)的关键在于它们所在用的预训练模型已经学会了编码感知信息和语义信息的能力，而这正是文章所提出的Perceptual Loss所要度量的。因此用图像分类预训练网络$\phi$作为固定的损失网络，用于定义损失函数。*然后再用这个损失函数来训练图像转换网络，而这个损失函数本身也是一个深度卷积网络。*
+
+损失网络$\phi$用来定义特征重建损失$\mathcal{l}_{feat}^{\phi}$和风格重建损失$\mathcal{l}_{style}^{\phi}$。
+
+对于风格转换问题，有内容目标$y_c$和风格目标$y_s$，需要对每一种风格训练一个网络。对于但图像超分辨率问题，只有内容目标$y_c$，无风格重建损失，对于每一级超分辨率尺度训练一个网络。
+
+### 图像转换网络
+
+文章使用的图像转换网络框架参考[https://arxiv.org/abs/1511.06434](https://arxiv.org/abs/1511.06434)，不使用Pooling层，而通过stride来完成网络中的上采样和下采样。网络包含5个残差块，结构遵照[http://torch.ch/blog/2016/02/04/resnets.html](http://torch.ch/blog/2016/02/04/resnets.html)，所有的非残差卷积层后都有spatial Batch Normalization和ReLu，而输出层则使用tanh并将其输出规范化到[0,255]。出了第一层和最后一层使用9\*9的卷积核，其它层使用3\*3的卷积核。[[Supplementary Material](https://pdfs.semanticscholar.org/9fa3/720371e78d04973ce9752781bc337480b68f.pdf)]
+
+![style transfer networks](https://github.com/mengyangniu/images/blob/master/Perceptual-Losses-Supplementary-Material-Table1.png?raw=true)
+
+![Super Resolution networks](https://github.com/mengyangniu/images/blob/master/Perceptual-Losses-Supplementary-Material-Table2.png?raw=true)
+
+![Residual block](https://github.com/mengyangniu/images/blob/master/Perceptual-Losses-Supplementary-Material-Figure1.png?raw=true)
+
+### Perceptual Loss Function
+
+文章使用ImageNet预训练的VGG16作为Perceptual Loss Function。
+
+##### 特征重建损失
+
