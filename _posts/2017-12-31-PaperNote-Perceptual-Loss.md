@@ -52,9 +52,11 @@ $$
 ##### 特征重建损失
 
 $\phi_j(x)$表示损失网络$\phi$在输入为$x$时第$j$层的激活值，若第$j$层是一个卷积层，则$\phi_j(x)$是维度为${C_j}\times{H_j}\times{W_j}$的特征图。特征重建损失表示为特征图之间的欧氏距离：
+
 $$
 \mathcal{l}^{\phi,j}_{feat}(\hat{y},y)=\frac{1}{C_jH_jW_j}{||\phi_j(\hat{y})-\phi_j(y)||}^2_2
 $$
+
 ![](https://raw.githubusercontent.com/mengyangniu/images/master/Perceptual-Loss-Figure3.png)
 
 选用不同卷积层的特征图计算特征损失，用以重建图像。可以看到，选用的层越深，重建出来的图像就越是倾向于只保留内容、结构信息，丢失颜色、质感等细节信息。
@@ -62,6 +64,8 @@ $$
 ##### 风格重建损失
 
 使用风格损失表征颜色、质地、样式等细节信息的偏差。和上述相同，$\phi_j(x)$表示损失网络$\phi$在输入为$x$时第$j$层的激活值，若第$j$层是一个卷积层，则$\phi_j(x)$是维度为${C_j}\times{H_j}\times{W_j}$的特征图。定义${C_j}\times{C_j}$的格拉姆矩阵（Gram Matrix）$G_j^{\phi}(x)$，其元素：
+
 $$
 G_j^{\phi}(x)_{c,c^{'}}=\frac{1}{C_jH_jW_j}\sum_{h=1}^{H_j}\sum_{w=1}^{W_j}\phi_j(x)_{h,w,c}\phi_j(x)_{h,w,c^{'}}
 $$
+
