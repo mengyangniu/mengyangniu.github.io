@@ -53,7 +53,7 @@ $$
 
 文章使用ImageNet预训练的VGG16来计算Perceptual Loss Function，分为特征重建损失（Feature Reconstruction Loss）和风格重建损失（Style Reconstruction Loss）。
 
-##### 特征重建损失
+#### 特征重建损失
 
 （我个人理解特征损失就是内容损失。）
 
@@ -66,7 +66,7 @@ $$
 
 ![](https://github.com/mengyangniu/images/blob/master/Perceptual-Loss-Figure3.png?raw=true)
 
-##### 风格重建损失
+#### 风格重建损失
 
 使用风格损失表征颜色、质地、样式等细节信息的偏差。和上述相同，$\phi_j(x)$表示损失网络$\phi$在输入为$x$时第$j$层的激活值，若第$j$层是一个卷积层，则$\phi_j(x)$是维度为${C_j}\times{H_j}\times{W_j}$的特征图。定义${C_j}\times{C_j}$的格拉姆矩阵（Gram Matrix）$G_j^{\phi}(x)$，其元素：
 
