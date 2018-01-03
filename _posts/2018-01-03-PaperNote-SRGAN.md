@@ -43,5 +43,5 @@ $$
 
 有对抗网络$D_{\theta_D}$和生成网络$G_{\theta_{G}}$，则网络训练可以表示为解决对抗的min-max问题：
 $$
-\min_{\theta_G}\max_{\theta_D}\mathbb{E}_{I^{HR}\sim{p_{train}(I^{HR})}}[logD_{\theta_D}(I_{HR})]+\mathbb{E}_{I^{LR}\sim{p_G(I^{LR})}}[log(1-D_{\theta_D}(G_{\theta_G}(I^{LR})))]
+\min_{\theta_G}\max_{\theta_D}&\mathbb{E}_{I^{HR}\sim{p_{train}(I^{HR})}}[logD_{\theta_D}(I_{HR})]\\&+\mathbb{E}_{I^{LR}\sim{p_G(I^{LR})}}[log(1-D_{\theta_D}(G_{\theta_G}(I^{LR})))]
 $$
