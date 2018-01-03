@@ -59,10 +59,11 @@ $$
 
 $\phi_j(x)$表示损失网络$\phi$在输入为$x$时第$j$层的激活值，若第$j$层是一个卷积层，则$\phi_j(x)$是维度为${C_j}\times{H_j}\times{W_j}$的特征图。特征重建损失表示为特征图之间的欧氏距离：
 
-选用不同卷积层的特征图计算特征损失，用以重建图像。可以由下图看到，选用的层越深，重建出来的图像就越是倾向于只保留内容、结构信息，丢失颜色、质感等细节信息：
 $$
 \mathcal{l}^{\phi,j}_{feat}(\hat{y},y)=\frac{1}{C_jH_jW_j}{||\phi_j(\hat{y})-\phi_j(y)||}^2_2
 $$
+
+选用不同卷积层的特征图计算特征损失，用以重建图像。可以由下图看到，选用的层越深，重建出来的图像就越是倾向于只保留内容、结构信息，丢失颜色、质感等细节信息：
 
 ![](https://github.com/mengyangniu/images/blob/master/Perceptual-Loss-Figure3.png?raw=true)
 
