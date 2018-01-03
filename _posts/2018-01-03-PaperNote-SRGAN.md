@@ -23,9 +23,7 @@ mathjax: true
 
 文章的重点在于：
 
-1. 使用GAN来完成SR任务
-2. 提出了由对抗损失（Adversarial Loss）和内容损失（Content Loss）组成的感知损失（Perceptual Loss）
-3. 提出MOS代替PSNR
+1. ​
 
 ### 方法
 
@@ -43,5 +41,5 @@ $$
 
 有对抗网络$D_{\theta_D}$和生成网络$G_{\theta_{G}}$，则网络训练可以表示为解决对抗的min-max问题：
 $$
-\min_{\theta_G}\max_{\theta_D}&\mathbb{E}_{I^{HR}\sim{p_{train}(I^{HR})}}[logD_{\theta_D}(I_{HR})]\\&+\mathbb{E}_{I^{LR}\sim{p_G(I^{LR})}}[log(1-D_{\theta_D}(G_{\theta_G}(I^{LR})))]
+\min_{\theta_G}\max_{\theta_D}\mathbb{E}_{I^{HR}\sim{p_{train}(I^{HR})}}[logD_{\theta_D}(I_{HR})]\\+\mathbb{E}_{I^{LR}\sim{p_G(I^{LR})}}[log(1-D_{\theta_D}(G_{\theta_G}(I^{LR})))]
 $$
