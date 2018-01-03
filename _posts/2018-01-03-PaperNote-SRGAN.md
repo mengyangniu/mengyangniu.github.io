@@ -31,9 +31,17 @@ mathjax: true
 
 $I^{HR}$表示原始的高分辨率图，$I^{LR}$表示对应的低分辨率图，$I^{SR}$表示由$I^{LR}$得到的超分辨率图，r为上采样率。
 
-$G_{\theta_{G}}$为生成网络，是一个前馈CNN，参数为$\theta_{G}$，$\theta_G=\{W_{1:L};b_{1:L}\}$，表示第$L$层的权重和偏置项。对于训练图像$I_n^{HR}$和$I_n^{LR}$：
+$G_{\theta_{G}}$为生成网络，是一个前馈CNN，参数为$\theta_{G}$，$\theta_G=\{W_{1:L};b_{1:L}\}$，表示第$L$层的权重和偏置项。对于图像$I_n^{HR}$和$I_n^{LR}$，训练过程可以表示为：
 
 $$
 \hat{\theta}_G=arg\min_{\theta_G}\frac{1}{N}\sum_{n=1}^Nl^{SR}(G_{\theta_G}(I_n^{LR}),I_n^{HR})
 $$
 
+其中$l^{SR}$为Perceptual Loss。
+
+#### 对抗网络
+
+有对抗网络$D_{\theta_D}$和生成网络$G_{\theta_{G}}$，则网络训练可以表示为解决对抗的min-max问题：
+$$
+\min_{\theta_G}\max_{\theta_D}\mathbb{E}_{I^{HR}\sim{p_{train}(I^{HR})}}[logD_{\theta_D}(I_{HR})]+\mathbb{E}_{I^{LR}\sim{p_G(I^{LR})}}[log(1-D_{\theta_D}(G_{\theta_G}(I^{LR})))]
+$$
