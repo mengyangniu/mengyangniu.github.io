@@ -130,13 +130,13 @@ SRResNet指SRResNet-MSE，SRGAN指SRGAN-VGG54。可以看到SRGAN的MOS得分远
 >
 > SRGAN 似乎恢复了一些细节，但也有人认为这些其实时高频噪声，噪声在图像处理中的作用十分值得关注，但该领域已经进入半死不活的状态，期待有理论上的突破。[1]
 
+<br />
 
+<br />
 
+<br />
 
-
-
-
-参考
+### 参考
 
 \[1\] [https://zhuanlan.zhihu.com/p/27859358](https://zhuanlan.zhihu.com/p/27859358)
 
