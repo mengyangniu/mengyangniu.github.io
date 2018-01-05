@@ -132,6 +132,10 @@ SRResNet指SRResNet-MSE，SRGAN指SRGAN-VGG54。可以看到SRGAN的MOS得分远
 
 
 
+
+
+
+
 参考
 
 \[1\] [https://zhuanlan.zhihu.com/p/27859358](https://zhuanlan.zhihu.com/p/27859358)
