@@ -27,10 +27,10 @@ mathjax: true
 
 ### 方法（Image-Specific CNN）
 
-无需外部数据集作为预训练样本，给定测试图像$I$，构建为此图像量身定做的超分辨率网络Image-Specific CNN，对$I$下采样获得更低分辨率的$I\downarrows$（s是SR系数）作为训练集。再将$I$输入训练好的CNN，即获得SR输出$I\uparrows$。其中CNN的全卷积网络，因此可以输入不同尺度的图像。具体过程如图所示：
+无需外部数据集作为预训练样本，给定测试图像$I$，构建为此图像量身定做的超分辨率网络Image-Specific CNN，对$I$下采样获得更低分辨率的$I\downarrow{s}$（s是SR系数）作为训练集。再将$I$输入训练好的CNN，即获得SR输出$I\uparrow{s}$。其中CNN的全卷积网络，因此可以输入不同尺度的图像。具体过程如图所示：
 
 <img src="https://github.com/mengyangniu/images/blob/master/zssr-Figure4.png?raw=true" style="zoom:60%"/>
 
 对$I$做图像增广以获得更多的LR-HR训练样本。办法就是将$I$以不同的下采样方式（文章没细说，我自己的理解），相同的下采样率$s$，得到不同的$I\downarrows$，也就得到了许多LR-HR样本组。进一步，将这些样本组进行0度、90度、180度、270度的随机旋转以及随机的水平和垂直镜像，可将训练集增大8倍。
 
-为了获得更好的鲁棒性，
+为了获得更好的鲁棒性，SR是逐渐进行的。算法应用于一些中间的尺度因子$(s_1,s_2,…s_m=s)$，将其生成的SR图$HR_i$以及其对应经过下采样并旋转的图添加到训练集中
