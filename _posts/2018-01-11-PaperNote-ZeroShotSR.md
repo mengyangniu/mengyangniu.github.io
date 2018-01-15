@@ -11,7 +11,9 @@ mathjax: true
 
 <center>“Zero-Shot” Super-Resolution using Deep Internal Learning</center>
 
-这篇笔记非常水。
+<center>这篇笔记非常水。</center>
+
+
 
 
 
