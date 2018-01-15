@@ -1,6 +1,6 @@
 ---
 title: PaperNote - Perceptual Loss
-data: 2017-12-31 23:42:00
+date: 2017-12-31 23:42:00
 categories:
 - PaperNote
 tags:

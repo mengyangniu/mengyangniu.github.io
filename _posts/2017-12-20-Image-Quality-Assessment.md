@@ -1,6 +1,6 @@
 ---
 title: Image Quality Assessment
-data: 2017-12-22 21:00:00
+date: 2017-12-22 21:00:00
 categories:
 - PaperNote
 tags:

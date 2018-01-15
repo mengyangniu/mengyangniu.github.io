@@ -1,6 +1,6 @@
 ---
 title: PaperNote - SRGAN
-data: 2018-01-05 17:11:00
+date: 2018-01-05 17:11:00
 categories:
 - PaperNote
 tags:
