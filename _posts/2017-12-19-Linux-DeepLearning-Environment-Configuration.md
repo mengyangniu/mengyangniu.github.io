@@ -102,12 +102,19 @@ cd ~
 mkdir OpenCV
 git clone https://github.com/opencv/opencv.git # 默认opencv3，如需2，设置branch
 git clone https://github.com/opencv/opencv_contrib.git
-# 需要一段时间
+# 需要一段时间，建议使用vps下载
+cd opencv/build
 cd build
 cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local   ..
 sudo make -j8 #-j8是指用8个线程
 sudo make install
 #如果在/usr/local里能看到Opencv的头文件和库文件，即安装完成
+```
+
+若卸载
+```bash
+cd Opencv/opencv/build
+make uninstall -j8
 ```
 
 # PyTorch
