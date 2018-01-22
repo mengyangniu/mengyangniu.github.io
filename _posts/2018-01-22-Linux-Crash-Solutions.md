@@ -14,4 +14,36 @@ mathjax: false
 
 ### 问题
 
-使用Ubuntu跑深度学习时，经常遇到这样一个问题：跑完程序电脑闲置一段时间后，使用htop可以看到CPU的一个线程持续100%被占用，此时使用gpu的深度学习程序也无法再次运行，nvidia-smi命令同样无法启动。并且一定概率无法使用shutdown、reboot、init等命令关机或重启。
+使用 Ubuntu 跑深度学习时，经常遇到这样一个问题：跑完程序电脑闲置一段时间后，使用 htop 可以看到 CPU 的一个线程持续100%被占用，此时使用 GPU 的深度学习程序也无法再次运行，nvidia-smi 命令同样无法启动。并且一定概率无法使用 shutdown、reboot、init 等命令关机或重启。
+
+使用 top 可以看到，一个名为 irq/${nnn}-nvidia 的进程占用 CPU 100%，且无法被 kill。主要是在跑调用 gpu 程序时，使用了 watch [-n 1] nvidia-smi 导致。
+
+### 解决方案
+
+sysrq组合键是内建于Linux内核的调试工具。只要内核没有完全锁住，不管内核在做什么事情，使用这些组合键都可以搜集包括系统内存使用、CPU任务处理、进程运行状态等系统运行信息。使用Alt + SysRq + [R-E-I-S-U-B] 就可以强行重启，但是sysrq组合键只能在连接着计算机的键盘上使用，无法远程控制重启。
+
+而通过/proc/sysrq-trigger可以远程控制。
+
+使用方式：
+
+```bash
+echo m > /proc/sysrq-trigger #导出内存分配信息
+
+echo t > /proc/sysrq-trigger #导出当前任务状态信息
+
+echo p > /proc/sysrq-trigger #导出当前CPU寄存器和标志位信息
+
+echo c > /proc/sysrq-trigger #产生空指针panic事件，人为导致系统崩溃
+
+echo s > /proc/sysrq-trigger #即时同步所有挂载的文件系统
+
+echo u > /proc/sysrq-trigger #即时重新挂载所有的文件系统为只读
+
+echo w > /proc/sysrq-trigger #转储处于uninterruptable阻塞状态的任务
+
+echo b > /proc/sysrq-trigger #立即重启计算机
+
+echo o > /proc/sysrq-trigger #立即关机计算机
+```
+
+在这个问题中，执行s、u、b即可。
