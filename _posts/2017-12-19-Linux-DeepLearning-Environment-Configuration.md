@@ -93,7 +93,7 @@ sudo cp -a ./lib64/* /usr/local/cuda/ib64/
 
 安装完毕
 
-#OpenCV2/3
+# OpenCV2/3
 
 找个地方建立一个工作目录，执行git，例如
 
