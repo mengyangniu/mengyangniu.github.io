@@ -2,9 +2,9 @@
 title: 机器学习算法笔记
 date: 2018-04-02 15:36:00
 categories:
-- Machine-Learning
+- MachineLearning
 tags:
-- Machine-Learning
+- MachineLearning
 - Algorithm
 mathjax: true
 ---
