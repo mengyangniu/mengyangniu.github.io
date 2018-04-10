@@ -6,6 +6,8 @@ categories:
 tags:
 - DeepLearning
 - PaperNote
+- SuperResolution
+- StyleTransfer
 mathjax: true
 ---
 
