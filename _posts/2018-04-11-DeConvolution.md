@@ -10,13 +10,13 @@ tags:
 mathjax: true
 ---
 
-<center>关于卷积、反卷积、转置卷积的简单理解。</center>
+<center>关于CNN中卷积、反卷积、转置卷积的简单理解。</center>
 
 <!-- more -->
 
 ### 卷积
 
-考虑如图卷积：
+考虑如图卷积操作：
 
 ![](https://raw.githubusercontent.com/vdumoulin/conv_arithmetic/master/gif/no_padding_no_strides.gif)
 
