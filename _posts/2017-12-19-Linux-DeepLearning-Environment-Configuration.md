@@ -1,5 +1,5 @@
 ---
-title:  Linux Deep Learning Enviroment Configuration
+title:  Linux Deep Learning Environment Configuration
 date: 2017-12-19 22:01:00
 categories:
 - Linux

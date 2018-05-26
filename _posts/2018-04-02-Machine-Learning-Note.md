@@ -13,4 +13,5 @@ mathjax: true
 
 <!-- more -->
 
-# Adaboost
+# SVM
+
