@@ -9,7 +9,7 @@ tags:
 mathjax: true
 ---
 
-<center>加载 整个/部分 预训练模型。</center>
+<center>加载（整个/部分）预训练模型。</center>
 
 <!-- more -->
 
@@ -73,7 +73,7 @@ for k, v in state_dict.items():
 model.load_state_dict(new_state_dict)
 ```
 
-或者在多卡训练时不`model = torch.nn.DataParallel(model, device_ids=[0, 1])`，
+或者<a href="https://izhaolei.github.io/bug%E9%9B%86%E5%90%88/2018/01/21/linux-%E9%97%AE%E9%A2%98%E9%9B%86%E5%90%88/#">iZhaolei</a>说在多卡训练时不`model = torch.nn.DataParallel(model, device_ids=[0, 1])`，
 
 而`output = torch.nn.parallel.data_parallel(self.model, input)`
 
