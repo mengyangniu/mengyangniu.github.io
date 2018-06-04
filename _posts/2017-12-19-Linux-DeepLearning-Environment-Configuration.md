@@ -7,7 +7,7 @@ tags:
 - Linux
 - DeepLearning
 - Configuration
-- Pytorch
+- PyTorch
 - Mxnet
 ---
 
