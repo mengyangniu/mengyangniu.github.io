@@ -17,7 +17,7 @@ mathjax: true
 #### 问题描述
 
 1. 能正常访问Google，但是访问Scholar时显示有异常流量被禁止访问；
-2. 或者能正常访问Scholar，但是无法打开Scholar的BitTex页面。
+2. 或者能正常访问Scholar，但是无法打开Scholar的BibTex页面。
 
 猜测：vps所在ip段频繁访问Scholar，可能是有人爬数据之类的。
 
