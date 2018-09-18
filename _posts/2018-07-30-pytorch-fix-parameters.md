@@ -15,14 +15,28 @@ mathjax: true
 
 ### PyTorch
 
-PyTorch模型的参数保存在`state_dict`内，换言之，以键值对的形式保存。因此在定义模型的时候，每一层的名字都应该合理选取，在这样的前提下，可以根据键来对模型参数赋`required_grad`属性。
-
 ```python
 def fix(model):
     for index, params in enumerate(model.parameters()):
         if index in [$layers you want to fix]:
             params.requires_grad = False
 ```
+
+```python
+def fix(model):
+    print(model._modules.keys())
+    # 以resnet18为例，输出为：
+    # odict_keys(['conv1', 'bn1', 'relu', 'maxpool', 'layer1', 'layer2', 'layer3', 'layer4', 'avgpool', 'fc'])
+    # 若要fix住conv1的参数：
+    for params in model._modules['conv1'].parameters():
+        params.requires_grad = False
+    # 若fix住bn1的参数
+    for params in model._modules['bn1'].parameters():
+        params.requires_grad = False
+        model._modules['bn1'].eval()
+```
+
+
 
 只将`requires_grad=True`的参数传入`optimizer`，例如：
 
