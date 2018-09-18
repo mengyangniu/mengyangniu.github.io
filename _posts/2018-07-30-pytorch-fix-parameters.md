@@ -19,11 +19,9 @@ PyTorch模型的参数保存在`state_dict`内，换言之，以键值对的形�
 
 ```python
 def fix(model):
-    for key, params in model.state_dict.items():
-        if 'conv1' in key: # 固定conv1的所有参数
+    for index, params in enumerate(model.parameters()):
+        if index in [$layers you want to fix]:
             params.requires_grad = False
-        else:
-            params.requires_grad = True
 ```
 
 只将`requires_grad=True`的参数传入`optimizer`，例如：
