@@ -33,7 +33,7 @@ def fix(model):
     # 若fix住bn1的参数
     for params in model._modules['bn1'].parameters():
         params.requires_grad = False
-        model._modules['bn1'].eval()
+        model._modules['bn1'].eval()1
 ```
 
 
