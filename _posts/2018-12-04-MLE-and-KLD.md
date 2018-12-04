@@ -18,7 +18,7 @@ mathjax: true
 若有$Y$的N个独立随机观测值$y_1,y_2,y_3,...y_N$，则有似然函数
 
 $$
-l(\theta)=\prod_{i=1}^{N}f(y_i|\theta)g
+l(\theta)=\prod_{i=1}^{N}f(y_i|\theta)
 $$
 
 则MLE(maximum likelihiid estimation)即为
