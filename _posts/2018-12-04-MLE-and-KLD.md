@@ -47,7 +47,7 @@ KL(g\|f)&=E(ln(g(y)))-E(ln(f(y\vert\theta)))\\&=\int{g(y)ln(g(y))}dy-\int{g(y)ln
 \end{split}
 $$
 
-当$g(y)​$等于$f(y\vert \theta)​$时，KL散度为0。若随机变量给定，则$E(ln(g(y)))​$是常量，因此极大似然估计(MLE)是当$N\rightarrow+\infty​$特殊情况下的KL散度的最小化求解。
+当$g(y)$等于$f(y\vert \theta)$时，KL散度为0。若随机变量给定，则$E(ln(g(y)))$是常量，因此极大似然估计(MLE)是当$N\rightarrow+\infty$特殊情况下的KL散度的最小化求解。
 
 ### MSE和MLE
 
@@ -101,3 +101,7 @@ $$
 $$
 
 最终又回到MSE。
+
+### 总结
+
+MSE是MLE在高斯白噪声前提下的特殊情况（laplace白噪声前提下MSE变成$l_1loss$），而MLE又是样本$N\rightarrow+\infty$时KLD的特殊情况，因此逐像素误差与MLE在概率、分布的角度上来说是共通的，又从KLD的信息论角度给MLE做出了解释。
