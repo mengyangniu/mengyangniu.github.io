@@ -135,7 +135,22 @@ $$
 
 SSIM的取值范围为[0,1]值越大则失真越小。
 
+当$C_3=C_2/2$时，
+$$
+SSIM(x,y)=\frac{(2\mu_x\mu_y+C_1)(2\sigma_{xy}+C_2)}{(\mu_x^2+\mu_y^2+C_1)(\sigma_x^2+\sigma_y^2+C_2)}
+$$
+根据SSIM原作"Image Quality Assessment: From Error Visibility to Structural Similarity"，SSIM指标更适用于在局部应用而不是在全局应用。因此，通常来说$\mu_x$，$\sigma_y$和$sigma_{xy}$通常都是在局部的图像块中求得的，并非基于全图的求解。
+
+因此，通常来说$\mu_x$，$\sigma_y$和$sigma_{xy}$通常都是在局部的图像块中求得的，并非基于全图的求解。一般来说，SSIM的求解过程是：
+
+1. 在图像的每一个像素的位置周围截取一个窗口，在窗口中计算$\mu_x$，$\sigma_y$和$sigma_{xy}$，求得该像素的SSIM值；
+2. 对全图每个像素的SSIM求均值得到全图SSIM均值。
+
+窗口通常采用圆形对称、各向同性的高斯窗。
+
 ## MSSIM
+
+根据SSIM原作"Image Quality Assessment: From Error Visibility to Structural Similarity"，
 
 > 在图像质量评估之中，局部求SSIM指数的效果要好于全局。第一，图像的统计特征通常在空间中分布不均；第二，图像的失真情况在空间中也是变化的；第三，在正常视距内，人们只能将视线聚焦在图像的一个区域内，所以局部处理更符合人类视觉系统的特点；第四，局部质量检测能得到图片空间质量变化的映射矩阵，结果可服务到其他应用中。
 > 在实际应用中，可以利用滑动窗将图像分块，令分块总数为N，考虑到窗口形状对分块的影响，采用加权计算每一窗口的均值、方差以及协方差，权值$\omega_{ij}$满足$\sum_i\sum_j\omega{ij}=1$，通常采用高斯核，然后计算对应块的结构相似度SSIM，最后将平均值作为两图像的结构相似性度量，即平均结构相似性MSSIM： 
@@ -152,13 +167,13 @@ $$
 \sigma_{xy}=\sum_{i=1}^N{\omega_i(x_i-\mu_x)(y_i-\mu_y)}
 $$
 
-> 应用这种加窗方法，映射矩阵就可展现出局部各向同性的性质。
+应用这种加窗方法，映射矩阵就可展现出局部各向同性的性质。
 
 $$
-MSSIM(x,y)=\frac{1}{MN}\sum_{i=1}^N{SSIM(x_i,y_i)}
+MSSIM(x,y)=\frac{1}{M}\sum_{i=1}^M{SSIM(x_i,y_i)}
 $$
 
-其中N为局部窗口的数量。
+其中M为局部窗口的数量。
 
 ## SROCC
 
