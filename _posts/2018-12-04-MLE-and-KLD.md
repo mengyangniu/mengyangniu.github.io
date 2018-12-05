@@ -181,3 +181,4 @@ MSE是MLE在高斯白噪声前提下的特殊情况（laplace白噪声前提下M
 [1] https://www.zhihu.com/question/41252833
 
 [2] Yang W, Zhang X, Tian Y, et al. Deep Learning for Single Image Super-Resolution: A Brief Review[J]. 2018.
+[3] https://wiseodd.github.io/techblog/2016/12/21/forward-reverse-kl/
