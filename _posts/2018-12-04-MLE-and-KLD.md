@@ -1,5 +1,5 @@
 ---
-title: MSE, MLE and KLD
+title: CE, MSE, MLE and KLD
 date: 2018-12-04 11:00:00
 categories:
 - MachineLearning
@@ -11,6 +11,74 @@ mathjax: true
 <center>"A Note for MSE, MLE and KLD"</center>
 
 <!-- more -->
+
+### KLD 和 CE
+
+假设有随机变量y的真实概率分布$g(y)$和非真实（预测）概率分布$f(y\vert\theta)$。
+
+根据真实分布$g$编码服从真实分布$g$的样本所需的期望编码长度（即平均编码长度）为：
+
+$$
+H(g)=\sum_yg(y)\times ln(\frac{1}{g(y)})
+$$
+
+根据非真实分布$f$编码服从真实分布$g$的样本所需的期望编码长度为：
+
+$$
+H(g,f)=\sum_yg(y)\times ln(\frac{1}{f(y\vert\theta)})
+$$
+
+其中$H(g,f)$称为Cross Entropy(交叉熵，CE)。且根据gibbs不等式，恒有
+
+$$
+H(g,f)\ge H(g)
+$$
+
+当$g$与$f$是分布时等号成立。故CE在ML，DL的分类问题中经常作为损失函数，minimum ce就是在使交叉熵$H(g,f)$逼近$H(g)$。
+
+定义两个编码长度的差为相对熵(Relative Entropy)，也称Kullback-Leibler Divergence，即KLD：
+
+$$
+KLD(g\Vert f)=H(g,f)-H(g)=\sum_y g(y)\times ln(\frac{g(y)}{f(y\vert\theta)})
+$$
+
+KLD的其他表达：
+
+$$
+KLD(g\Vert f)=E_{y\sim g(y)}[ln(g(y))-ln(f(y\vert\theta))]
+$$
+
+### forward KLD 和 reverse KLD
+
+假设有随机变量y的真实概率分布$g(y)$和非真实（预测）概率分布$f(y\vert\theta)$。
+
+则forward KLD定义为：
+
+$$
+\begin{split}
+KLD(g\Vert f)
+&=E_{y\sim g(y)}[ln(g(y))-ln(f(y\vert\theta))]
+\\
+&=\sum_yg(y)ln(\frac{g(y)}{f(y\vert\theta)})
+\end{split}
+$$
+
+backward KLD定义为：
+
+$$
+\begin{split}
+KLD(f\Vert g)
+&=E_{y\sim f(y\vert\theta)}[ln(f(y\vert\theta)-ln(g(y))]
+\\
+&=\sum_yf(y\vert\theta)ln(\frac{f(y\vert\theta)}{g(y)})
+\end{split}
+$$
+
+下面分析forward KLD与backward KLD的区别。forward KLD和backward KLD优化的目的都是使预测分布$f$逼近真实分布$g$。但是两者在具体问题的表现上又有所不同。
+
+假设$g$服从混合高斯分布（可以近似看做多个高斯曲线的叠加然后归一化？），而$f$的建模却局限于单高斯。则forward KLD的优化会使$f$去逼近$g$的非零部分，而$g$有多个高斯峰，此时$f$很容易去拟合成一条$sigma$很大的平滑的高斯曲线，在$g$的每一个峰处都有所取值。而backward KLD会使$f$在$g$的某一个峰值处得到高响应而忽视其他峰值，即$f$的$\mu$与$g$中某一个高斯的$\mu$重合且$\sigma$较小。
+
+有文献认为优化backward KLD未必能有更低的loss，但可以给人带来更好的视觉感受（不过于平滑）。有理由认为观察者已经学习到了自然图像的真实分布$g$，可以视作是先验信息。对一张生成图像的评估则是衡量该图像的预测分布$f$与$g$的近似程度，即$KLD(f\Vert g)​$，即backward KLD。
 
 ### MLE和KLD
 
@@ -105,3 +173,11 @@ $$
 ### 总结
 
 MSE是MLE在高斯白噪声前提下的特殊情况（laplace白噪声前提下MSE变成$l_1loss$），而MLE又是样本$N\rightarrow+\infty$时KLD的特殊情况，因此逐像素误差与MLE在概率、分布的角度上来说是共通的，又从KLD的信息论角度给MLE做出了解释。
+
+
+
+### 参考
+
+[1] https://www.zhihu.com/question/41252833
+
+[2] Yang W, Zhang X, Tian Y, et al. Deep Learning for Single Image Super-Resolution: A Brief Review[J]. 2018.
