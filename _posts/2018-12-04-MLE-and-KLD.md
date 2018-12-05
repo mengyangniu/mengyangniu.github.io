@@ -8,7 +8,7 @@ tags:
 mathjax: true
 ---
 
-<center>"A Note for MSE, MLE and KLD"</center>
+<center>"A Note for CE, MSE, MLE and KLD"</center>
 
 <!-- more -->
 
@@ -78,7 +78,7 @@ $$
 
 假设$g$服从混合高斯分布（可以近似看做多个高斯曲线的叠加然后归一化？），而$f$的建模却局限于单高斯。则forward KLD的优化会使$f$去逼近$g$的非零部分，而$g$有多个高斯峰，此时$f$很容易去拟合成一条$sigma$很大的平滑的高斯曲线，在$g$的每一个峰处都有所取值。而backward KLD会使$f$在$g$的某一个峰值处得到高响应而忽视其他峰值，即$f$的$\mu$与$g$中某一个高斯的$\mu$重合且$\sigma$较小。
 
-有文献认为优化backward KLD未必能有更低的loss，但可以给人带来更好的视觉感受（不过于平滑）。有理由认为观察者已经学习到了自然图像的真实分布$g$，可以视作是先验信息。对一张生成图像的评估则是衡量该图像的预测分布$f$与$g$的近似程度，即$KLD(f\Vert g)​$，即backward KLD。
+有文献认为优化backward KLD未必能有更低的loss，但可以给人带来更好的视觉感受（不过于平滑）。有理由认为观察者已经学习到了自然图像的真实分布$g$，可以视作是先验信息。对一张生成图像的评估则是衡量该图像的预测分布$f$与$g$的近似程度，即$KLD(f\Vert g)$，即backward KLD。
 
 ### MLE和KLD
 
