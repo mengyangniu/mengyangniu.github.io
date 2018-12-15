@@ -92,13 +92,13 @@ $$
 则MLE(maximum likelihiid estimation)即为
 
 $$
-\theta=\max_\theta l(\theta)=\max_\theta \prod_{i=1}^Nf(y_i\vert\theta)=\max_\theta\sum_{i=1}^Nln(f(y_i\vert\theta))
+\theta=arg\max_\theta l(\theta)=arg\max_\theta \prod_{i=1}^Nf(y_i\vert\theta)=arg \max_\theta\sum_{i=1}^Nln(f(y_i\vert\theta))
 $$
 
 若假设$N\rightarrow+\infty$，且Y有真实分布的概率密度函数$g(y)$，则
 
 $$
-\theta=\max_\theta\lim_{N\rightarrow+\infty}\frac{1}{N}\sum_{i=1}^Nln(f(y_i\vert\theta))=\max_\theta E(ln(f(y\vert\theta)))
+\theta=arg\max_\theta\lim_{N\rightarrow+\infty}\frac{1}{N}\sum_{i=1}^Nln(f(y_i\vert\theta))=arg\max_\theta E(ln(f(y\vert\theta)))
 $$
 
 其中
@@ -133,7 +133,7 @@ $$
 设模型的长度为N的输入序列为$X=[x_1,x_2,...x_N]$，长度为N的标注序列(可以认为是ground truth) $Y=[y1,y2,...y_N]$，模型为$F$，模型参数$\theta$。则最小化MSE(mean square error)或$l_2 loss$可以表示为：
 
 $$
-\min_\theta(MSE(F(X;\theta),Y))=\min_\theta(\frac{1}{N}\sum_i(F(x_i;\theta)-y_i))=\min_\theta\| F(X;\theta)-Y\| _2^2
+arg\min_\theta(MSE(F(X;\theta),Y))=arg\min_\theta(\frac{1}{N}\sum_i(F(x_i;\theta)-y_i))=arg\min_\theta\| F(X;\theta)-Y\| _2^2
 $$
 
 则网络训练的目的可以看做是：希望ground truth Y尽可能近似于网络的输出$F(X;\theta)$加上独立同分布的高斯白噪声$N(0,\sigma^2)$，即可以将Y的条件概率密度表示为：
@@ -161,10 +161,10 @@ $$
 
 $$
 \begin{split}
-\theta&=\max_\theta l(\theta)\\
-&=\max_\theta \prod_{i=1}^N N(y_i\vert F(x_i;theta), \sigma^2)\\
-&=\max_\theta \prod_{i=1}^N \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(y_i-F(x_i;\theta))^2}{2\sigma^2}}\\
-&=\min_\theta\sum_{i=1}^N(y_i-F(x_i;\theta))^2
+\theta&=arg\max_\theta l(\theta)\\
+&=arg\max_\theta \prod_{i=1}^N N(y_i\vert F(x_i;theta), \sigma^2)\\
+&=arg\max_\theta \prod_{i=1}^N \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(y_i-F(x_i;\theta))^2}{2\sigma^2}}\\
+&=arg\min_\theta\sum_{i=1}^N(y_i-F(x_i;\theta))^2
 \end{split}
 $$
 
